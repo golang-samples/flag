@@ -7,8 +7,8 @@ import (
 
 func main() {
 	f := flag.NewFlagSet("flag", flag.ExitOnError)
-	_ = f.Bool("bool", false, "this is bool flag")
-	_ = f.Int("int", 0, "this is int flag")
+	f.Bool("bool", false, "this is bool flag")
+	f.Int("int", 0, "this is int flag")
 
 	visitor := func(a *flag.Flag) {
 		fmt.Println(">", a.Name, "value=", a.Value)
